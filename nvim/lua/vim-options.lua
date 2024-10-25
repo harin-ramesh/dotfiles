@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.g.background = "light"
 
 vim.opt.swapfile = false
-
 vim.opt.guicursor = ""
 
 vim.keymap.set('n', '<c-k>', ':wincmd k<cr>')
@@ -59,7 +58,6 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", "yyp")
 
-vim.keymap.set("n", "q", "<nop>")
 
 vim.keymap.set("n", "<c-k>", "<cmd>cnext<cr>zz")
 vim.keymap.set("n", "<c-j>", "<cmd>cprev<cr>zz")
