@@ -1,0 +1,4 @@
+[opener]
+play = [
+	{ run = '/usr/bin/vlc "$@"', orphan = true, for = "unix" },
+]
