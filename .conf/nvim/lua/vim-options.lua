@@ -40,7 +40,7 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<cr>')
 vim.keymap.set("n", "<leader>pv", function() vim.cmd("ex") end)
 
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
-vim.keymap.set("v", "k", ":m '<-2<cr>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<c-d>", "<c-d>zz")
@@ -50,8 +50,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>q", ":qa!<cr>")
 
-vim.keymap.set({ "n", "v" }, "<leader>o", "o<esc>j")
 vim.keymap.set({ "n", "v" }, "<leader>o", "o<esc>k")
+vim.keymap.set({ "n", "v" }, "<leader>O", "O<esc>j")
 
 vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]])
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
