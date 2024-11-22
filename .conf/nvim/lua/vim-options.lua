@@ -34,6 +34,8 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true })
+vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true })
 
 vim.keymap.set('n', '<leader>h', ':nohlsearch<cr>')
 
