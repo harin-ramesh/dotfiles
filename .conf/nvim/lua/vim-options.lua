@@ -4,11 +4,6 @@ vim.g.background = "light"
 vim.opt.swapfile = false
 vim.opt.guicursor = ""
 
-vim.keymap.set('n', '<c-k>', ':wincmd k<cr>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<cr>')
-vim.keymap.set('n', '<c-h>', ':wincmd h<cr>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<cr>')
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -34,10 +29,26 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.keymap.set('n', '<c-k>', ':wincmd k<cr>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<cr>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<cr>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<cr>')
+
+vim.keymap.set("n", "<leader>=", ":vsplit<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>-", ":split<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<Leader>h", ":vertical resize -5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>l", ":vertical resize +5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>k", ":resize +5<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>j", ":resize -5<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true })
 vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true })
 
-vim.keymap.set('n', '<leader>h', ':nohlsearch<cr>')
+vim.api.nvim_set_keymap('v', 'p', '"_dP', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'p', 'gP', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>n', ':nohlsearch<cr>')
 
 vim.keymap.set("n", "<leader>pv", function() vim.cmd("Ex") end)
 
