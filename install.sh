@@ -1,5 +1,5 @@
 CURRENT_DIR=$(pwd)
-CONFIG_PATH="$CURRENT_DIR/.conf/"
+CONFIG_PATH="$CURRENT_DIR/.conf"
 
 ln -sf "$CONFIG_PATH/nvim" ~/.config/nvim
 ln -sf "$CONFIG_PATH/kitty" ~/.config/kitty
