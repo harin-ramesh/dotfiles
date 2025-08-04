@@ -19,6 +19,7 @@ draw_bar() {
 
 case "$ACTION" in
   up)
+    pactl set-sink-mute @DEFAULT_SINK@ 0  # Unmute if muted
     pactl set-sink-volume @DEFAULT_SINK@ +5%
     vol=$(get_volume)
     if [ "$vol" -gt "$MAX_VOLUME" ]; then

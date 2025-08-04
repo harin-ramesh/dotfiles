@@ -3,8 +3,8 @@
 # ICON_MUTED="󰍬"
 # ICON_UNMUTED="󰍭"
 
-ICON_MUTED=""
-ICON_UNMUTED=""
+ICON_UNMUTED=""
+ICON_MUTED=""
 
 SOURCE=$(pactl info | grep 'Default Source' | awk '{print $3}')
 if [ -z "$SOURCE" ]; then
