@@ -11,3 +11,12 @@ ln -sf "$CONFIG_PATH/picom" ~/.config/picom
 ln -sf "$CONFIG_PATH/starship.toml" ~/.config/starship.toml
 
 ln -sf "$CURRENT_DIR/.tmux.conf" ~/.tmux.conf
+
+
+# Create symlinks for Neovim configuration in root's home directory
+sudo mkdir -p /root/.config
+sudo ln -s /home/$USER/.config/nvim /root/.config/nvim
+
+sudo ln -s /home/$USER/.local/share/nvim /root/.local/share/nvim
+sudo ln -s /home/$USER/.local/state/nvim /root/.local/state/nvim
+sudo ln -s /home/$USER/.cache/nvim /root/.cache/nvim

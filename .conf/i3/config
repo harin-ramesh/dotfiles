@@ -40,6 +40,7 @@ exec_always --no-startup-id ~/.config/polybar/scripts/launch_polybar.sh
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+exec --no-startup-id ~/.config/i3/scripts/battery_notify.sh
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -205,3 +206,6 @@ bindsym XF86AudioMute        exec --no-startup-id ~/.config/i3/scripts/volume_no
 # Mic mute toggle
 bindsym XF86AudioMicMute     exec --no-startup-id ~/.config/i3/scripts/volume_notify.sh mic
 
+# Brightness controls using brightnessctl
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo /usr/bin/brightnessctl set +2%
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo /usr/bin/brightnessctl set 2%-
