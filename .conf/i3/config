@@ -164,6 +164,18 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# move focused container to workspace and follow it
+bindsym Control+1 move container to workspace number $ws1; workspace number $ws1
+bindsym Control+2 move container to workspace number $ws2; workspace number $ws2
+bindsym Control+3 move container to workspace number $ws3; workspace number $ws3
+bindsym Control+4 move container to workspace number $ws4; workspace number $ws4
+bindsym Control+5 move container to workspace number $ws5; workspace number $ws5
+bindsym Control+6 move container to workspace number $ws6; workspace number $ws6
+bindsym Control+7 move container to workspace number $ws7; workspace number $ws7
+bindsym Control+8 move container to workspace number $ws8; workspace number $ws8
+bindsym Control+9 move container to workspace number $ws9; workspace number $ws9
+bindsym Control+0 move container to workspace number $ws10; workspace number $ws10
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -207,5 +219,12 @@ bindsym XF86AudioMute        exec --no-startup-id ~/.config/i3/scripts/volume_no
 bindsym XF86AudioMicMute     exec --no-startup-id ~/.config/i3/scripts/volume_notify.sh mic
 
 # Brightness controls using brightnessctl
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo /usr/bin/brightnessctl set +2%
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo /usr/bin/brightnessctl set 2%-
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo /usr/bin/brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo /usr/bin/brightnessctl set 5%-
+
+# To get toch pad tapping working, you may need to adjust the device name.
+# You can find the correct name by running `xinput list` in a terminal.
+# The following commands enable tapping and set the button mapping.
+exec_always --no-startup-id xinput set-prop "FTCS1000:00 2808:0101 Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "FTCS1000:00 2808:0101 Touchpad" "libinput Tapping Button Mapping Enabled" 1, 0
+
