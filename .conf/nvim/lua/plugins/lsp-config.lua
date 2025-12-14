@@ -10,7 +10,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = {"lua_ls", "clangd", "rust_analyzer", "html", "tsserver"},
+                ensure_installed = { "lua_ls", "clangd", "rust_analyzer", "html", "ts_ls" },
                 automatic_installation = true,
             })
         end
@@ -20,28 +20,28 @@ return {
         lazy = false,
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            local lspconfig = require("lspconfig")
 
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities
+            -- New Neovim 0.11+ API
+            vim.lsp.config('lua_ls', {
+                capabilities = capabilities,
+            })
+            vim.lsp.config('html', {
+                capabilities = capabilities,
+            })
+            vim.lsp.config('clangd', {
+                capabilities = capabilities,
+            })
+            vim.lsp.config('rust_analyzer', {
+                capabilities = capabilities,
+            })
+            vim.lsp.config('ts_ls', {
+                capabilities = capabilities,
             })
 
-            lspconfig.html.setup({
-                capabilities = capabilities
-            })
+            -- Enable all configured servers
+            vim.lsp.enable({ 'lua_ls', 'html', 'clangd', 'rust_analyzer', 'ts_ls' })
 
-            lspconfig.clangd.setup({
-                capabilities = capabilities
-            })
-
-            lspconfig.rust_analyzer.setup({
-                capabilities = capabilities
-            })
-
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities
-            })
-
+            -- Keymaps
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
