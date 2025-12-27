@@ -45,6 +45,6 @@ return {
       },
     })
     
-    vim.keymap.set('n', 'le', vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+    vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float, { desc = "Show line diagnostics" })
   end,
 }
