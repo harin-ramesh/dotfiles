@@ -46,7 +46,9 @@ vim.api.nvim_set_keymap('n', 'd', '"_d', { noremap = true })
 vim.api.nvim_set_keymap('v', 'd', '"_d', { noremap = true })
 
 vim.api.nvim_set_keymap('v', 'p', '"_dP', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'p', 'gP', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'P', '"_dP', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'p', 'gp', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'P', 'gP', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>n', ':nohlsearch<cr>')
 
