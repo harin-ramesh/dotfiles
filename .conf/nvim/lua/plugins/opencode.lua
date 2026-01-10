@@ -9,7 +9,9 @@ return {
   config = function()
     ---@type opencode.Opts
     vim.g.opencode_opts = {
-      -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
+      -- Set a fixed port so the plugin can communicate with opencode
+      -- This will append "--port 4096" to the opencode command when starting via the provider
+      port = 4096,
     }
 
     -- Required for `opts.events.reload`.
