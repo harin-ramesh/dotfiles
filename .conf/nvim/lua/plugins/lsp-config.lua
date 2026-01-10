@@ -10,7 +10,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "rust_analyzer", "html", "ts_ls" },
+                ensure_installed = { "lua_ls", "clangd", "rust_analyzer", "html", "ts_ls", "pyright" },
                 automatic_installation = true,
             })
         end
@@ -37,9 +37,12 @@ return {
             vim.lsp.config('ts_ls', {
                 capabilities = capabilities,
             })
+            vim.lsp.config('pyright', {
+                capabilities = capabilities,
+            })
 
             -- Enable all configured servers
-            vim.lsp.enable({ 'lua_ls', 'html', 'clangd', 'rust_analyzer', 'ts_ls' })
+            vim.lsp.enable({ 'lua_ls', 'html', 'clangd', 'rust_analyzer', 'ts_ls', 'pyright'})
 
             -- Keymaps
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
