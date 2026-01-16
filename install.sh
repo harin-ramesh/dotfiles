@@ -10,6 +10,7 @@ ln -sf "$CONFIG_PATH/polybar" ~/.config/polybar
 ln -sf "$CONFIG_PATH/picom" ~/.config/picom
 ln -sf "$CONFIG_PATH/fish" ~/.config/fish
 ln -sf "$CONFIG_PATH/starship.toml" ~/.config/starship.toml
+ln -sf "$CONFIG_PATH/wezterm" ~/.config/wezterm
 
 ln -sf "$CURRENT_DIR/.tmux.conf" ~/.tmux.conf
 

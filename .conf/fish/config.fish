@@ -9,3 +9,5 @@ end
 
 # opencode
 fish_add_path /home/harin/.opencode/bin
+alias vim nvim
+
