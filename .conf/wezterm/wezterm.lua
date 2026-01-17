@@ -15,7 +15,7 @@ return {
   },
 
   -- Transparency
-  window_background_opacity = 0.85,  -- 0.0 = fully transparent, 1.0 = fully opaque
+  window_background_opacity = 0.95,  -- 0.0 = fully transparent, 1.0 = fully opaque
 
   -- Optional: dim inactive panes for better focus
   inactive_pane_hsb = {
