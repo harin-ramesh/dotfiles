@@ -73,4 +73,7 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", "yyp")
 
+vim.keymap.set({ "n", "x" }, "{", "}")
+vim.keymap.set({ "n", "x" }, "}", "{")
+
 vim.keymap.set("n", "<leader>s", [[:%s/\<<c-r><c-w>\>/<c-r><c-w>/gi<left><left><left>]])
