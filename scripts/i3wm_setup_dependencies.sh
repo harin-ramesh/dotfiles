@@ -34,6 +34,9 @@ sudo apt install -y dunst
 # 📨 libnotify-bin - for notify-send command
 sudo apt install -y libnotify-bin
 
+# git diff tool - delta
+cargo install delta
+
 # 📨 brightnessctl - for managing screen brightness
 sudo apt install brightnessctl
 echo "✅ All dependencies installed."

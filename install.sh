@@ -1,7 +1,9 @@
 #!/bin/bash
 
 CURRENT_DIR=$(pwd)
-CONFIG_PATH="$CURRENT_DIR/.conf"
+CONFIG_PATH="$CURRENT_DIR/config"
+HOME_PATH="$CURRENT_DIR/home"
+TEMPLATES_PATH="$CURRENT_DIR/templates"
 
 # Safe symlink creator
 link() {
@@ -25,7 +27,7 @@ link() {
 }
 
 ##############################
-# USER CONFIG SYMLINKS
+# XDG CONFIG SYMLINKS (~/.config/)
 ##############################
 
 link "$CONFIG_PATH/nvim"           "$HOME/.config/nvim"
@@ -39,7 +41,30 @@ link "$CONFIG_PATH/fish"           "$HOME/.config/fish"
 link "$CONFIG_PATH/starship.toml"  "$HOME/.config/starship.toml"
 link "$CONFIG_PATH/wezterm"        "$HOME/.config/wezterm"
 
-link "$CURRENT_DIR/.tmux.conf"     "$HOME/.tmux.conf"
+##############################
+# HOME DOTFILE SYMLINKS (~/)
+##############################
+
+link "$HOME_PATH/.tmux.conf"       "$HOME/.tmux.conf"
+link "$HOME_PATH/.gitconfig"       "$HOME/.gitconfig"
+
+##############################
+# TEMPLATES (copied, not symlinked)
+##############################
+
+# Create .gitconfig.local from template with user-provided values
+if [ -f "$HOME/.gitconfig.local" ]; then
+    echo "OK: $HOME/.gitconfig.local already exists, skipping"
+else
+    echo ""
+    echo "Setting up Git user config (~/.gitconfig.local)..."
+    read -rp "  Git author name: " git_name
+    read -rp "  Git author email: " git_email
+    sed -e "s/^    name = .*/    name = $git_name/" \
+        -e "s/^    email = .*/    email = $git_email/" \
+        "$TEMPLATES_PATH/.gitconfig.local" > "$HOME/.gitconfig.local"
+    echo "Created: $HOME/.gitconfig.local"
+fi
 
 ##############################
 # ROOT CONFIG SYMLINKS
