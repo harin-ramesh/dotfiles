@@ -9,6 +9,7 @@ $character
 """
 
 palette = 'catppuccin_mocha'
+command_timeout = 1000
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'

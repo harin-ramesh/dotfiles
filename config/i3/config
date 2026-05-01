@@ -122,7 +122,7 @@ bindsym $mod+Shift+d layout default
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+Shift+f floating enable; resize set 1000 700; move position center
 for_window [class="org.gnome.Nautilus"] floating enable, resize set 1000 700, move position center
-for_window [class="blueman-manager"] floating enable, resize set 700 500, move position center
+for_window [class="Pavucontrol"] floating enable, resize set 1000 700, move position center
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
 
